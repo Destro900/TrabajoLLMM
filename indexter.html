@@ -1,70 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-
+ 
 <head>
  
   <meta charset="UTF-8" />
-
+ 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+ 
   <!-- Título -->
   <title>Mundo Fútbol</title>
-
+ 
   <!-- Enlace a la hoja de estilos externa. -->
    
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
+ 
 <body>
-
-
+ 
+ 
   <header id="cabecera">
     <nav>
-
+ 
       <!-- Nombre del sitio -->
       <div class="logo">
         Mundo Fútbol
       </div>
-
+ 
       <!-- Lista de enlaces de navegación interna. -->
       <ul class="menu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre">Sobre el fútbol</a></li>
         <li><a href="#jugadores">Jugadores</a></li>
         <li><a href="#equipos">Equipos míticos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
-
+ 
     </nav>
   </header>
-
-
-
+ 
+ 
+ 
   <section id="inicio" class="seccion-hero">
-
+ 
     <div class="hero-contenido">
-
+ 
       <!-- Titulo principal -->
       <h1>Bienvenido al mundo del fútbol</h1>
-
+ 
       <!-- Subtítulo  de la web -->
       <p class="subtitulo">
         Historia, reglas, jugadores legendarios y los equipos más míticos del planeta
       </p>
-
+ 
       <!-- Botón de llamada a la acción. -->
       <a href="#sobre" class="btn-principal" id="btn-explorar">Explorar</a>
-
+ 
     </div>
-
+ 
   </section>
-
-
-
+ 
+ 
+ 
   <section id="sobre" class="seccion">
-
+ 
     <h2 class="titulo-seccion">Sobre el fútbol</h2>
-
+ 
     <!-- Explica brevemente el origen del fútbol moderno -->
     <article class="tarjeta" id="historia">
       <h3>Historia</h3>
@@ -75,7 +76,7 @@
         más popular del mundo, con más de 4.000 millones de aficionados.
       </p>
     </article>
-
+ 
     <!--  Reglas básicas -->
     <article class="tarjeta" id="reglas">
       <h3>Reglas básicas</h3>
@@ -87,36 +88,36 @@
         <li>La tarjeta roja supone la expulsión inmediata del jugador.</li>
       </ul>
     </article>
-
+ 
     <!--  Curiosidades -->
     <article class="tarjeta" id="curiosidades">
       <h3>Curiosidades</h3>
-
+ 
       <p>
         El partido de fútbol con más espectadores en la historia fue la
         final del Mundial de 1950 entre Brasil y Uruguay, con más de
         <strong>200.000 personas</strong> en el estadio Maracaná.
       </p>
-
+ 
       <div id="curiosidad-aleatoria" class="curiosidad-js"></div>
-
+ 
       <button id="btn-curiosidad" class="btn-secundario">
         Ver otra curiosidad
       </button>
-
+ 
     </article>
-
+ 
   </section>
-
-
+ 
+ 
   <!-- JUGADORES LEGENDARIOS
        Muestra tarjetas con los jugadores más destacados de la historia.-->
   <section id="jugadores" class="seccion">
-
+ 
     <h2 class="titulo-seccion">Jugadores legendarios</h2>
-
+ 
     <div class="grid-jugadores" id="grid-jugadores">
-
+ 
       <!--Lionel Messi
            -->
       <div class="tarjeta-jugador" data-posicion="delantero">
@@ -125,7 +126,7 @@
         <p>Considerado uno de los mejores jugadores de la historia.
            Campeon del mundo con Argentina en 2022.</p>
       </div>
-
+ 
       <!-- Cristiano Ronaldo-->
       <div class="tarjeta-jugador" data-posicion="delantero">
         <h3>Cristiano Ronaldo</h3>
@@ -133,7 +134,7 @@
         <p>Maximo goleador historico en selecciones nacionales.
            Ganador de 5 Balones de Oro.</p>
       </div>
-
+ 
       <!--  Manuel Neuer -->
       <div class="tarjeta-jugador" data-posicion="portero">
         <h3>Manuel Neuer</h3>
@@ -141,7 +142,7 @@
         <p>Revoluciono el juego del portero moderno con su estilo
            de libero con guantes.</p>
       </div>
-
+ 
       <!--  Xavi Hernandez -->
       <div class="tarjeta-jugador" data-posicion="centrocampista">
         <h3>Xavi Hernandez</h3>
@@ -149,9 +150,9 @@
         <p>Simbolo del tiki-taka español. Campeon del mundo en 2010
            y de Europa en 2008 y 2012.</p>
       </div>
-
+ 
     </div>
-
+ 
  
     <div class="filtros" id="filtros-jugadores">
       <button class="btn-filtro activo" data-filtro="todos">Todos</button>
@@ -159,18 +160,18 @@
       <button class="btn-filtro" data-filtro="centrocampista">Centrocampistas</button>
       <button class="btn-filtro" data-filtro="portero">Porteros</button>
     </div>
-
+ 
   </section>
-
-
+ 
+ 
   <!-- 
        Muestra tarjetas con los clubes más importantes de la historia. -->
   <section id="equipos" class="seccion">
-
+ 
     <h2 class="titulo-seccion">Equipos míticos</h2>
-
+ 
     <div class="grid-equipos" id="grid-equipos">
-
+ 
       <!--  Real Madrid -->
       <div class="tarjeta-equipo" data-pais="españa">
         <h3>Real Madrid</h3>
@@ -186,7 +187,7 @@
           el Santiago Bernabeu, es uno de los mas iconicos del mundo.
         </p>
       </div>
-
+ 
       <!-- FC Barcelona -->
       <div class="tarjeta-equipo" data-pais="españa">
         <h3>FC Barcelona</h3>
@@ -201,7 +202,7 @@
           <em>Mes que un club</em> refleja su caracter cultural y social.
         </p>
       </div>
-
+ 
       <!--Bayern de Munich-->
       <div class="tarjeta-equipo" data-pais="alemania">
         <h3>Bayern de Munich</h3>
@@ -216,7 +217,7 @@
           el sextete completo bajo las ordenes de Hansi Flick.
         </p>
       </div>
-
+ 
       <!-- AC Milan-->
       <div class="tarjeta-equipo" data-pais="italia">
         <h3>AC Milan</h3>
@@ -231,7 +232,7 @@
           fue el equipo mas dominante del mundo con Sacchi y Capello.
         </p>
       </div>
-
+ 
       <!--Liverpool FC-->
       <div class="tarjeta-equipo" data-pais="inglaterra">
         <h3>Liverpool FC</h3>
@@ -246,7 +247,7 @@
           <em>You'll Never Walk Alone</em> es el mas famoso del futbol mundial.
         </p>
       </div>
-
+ 
       <!-- Ajax de Amsterdam -->
       <div class="tarjeta-equipo" data-pais="países bajos">
         <h3>Ajax de Amsterdam</h3>
@@ -261,9 +262,9 @@
           del <strong>futbol total</strong>, influenciando a generaciones enteras.
         </p>
       </div>
-
+ 
     </div>
-
+ 
     <div class="filtros" id="filtros-equipos">
       <button class="btn-filtro activo" data-filtro="todos">Todos</button>
       <button class="btn-filtro" data-filtro="españa">España</button>
@@ -272,18 +273,90 @@
       <button class="btn-filtro" data-filtro="inglaterra">Inglaterra</button>
       <button class="btn-filtro" data-filtro="países bajos">Países Bajos</button>
     </div>
-
+ 
   </section>
+ 
+  <section id="contacto" class="seccion">
+ 
+    <h2 class="titulo-seccion">Contacto</h2>
+ 
+    <!-- Formulario de contacto -->
+    <form id="form-contacto" class="formulario" novalidate>
+ 
+      <!-- Nombre del usuario -->
+      <div class="campo-form">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Tu nombre"
+          required
+        />
+        <span class="error-form" id="error-nombre"></span>
+      </div>
+ 
+      <!-- Correo electrónico -->
+      <div class="campo-form">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="tucorreo@ejemplo.com"
+          required
+        />
+        <!-- Mensaje de error si el email esta mal -->
+        <span class="error-form" id="error-email"></span>
+      </div>
+ 
+      <!-- Jugador o equipo favorito  -->
+      <div class="campo-form">
+        <label for="favorito">¿Cuál es tu jugador o equipo favorito?</label>
+        <input
+          type="text"
+          id="favorito"
+          name="favorito"
+          placeholder="Ej: Real Madrid, Messi..."
+        />
+      </div>
+ 
+      <!--  Mensaje o comentario -->
+      <div class="campo-form">
+        <label for="mensaje">Mensaje</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="5"
+          placeholder="Escribe tu comentario o sugerencia..."
+          required
+        ></textarea>
 
-
+        <span class="error-form" id="error-mensaje"></span>
+      </div>
+ 
+      <!-- Botón de envío del formulario -->
+      <button type="submit" class="btn-principal" id="btn-enviar">
+        Enviar mensaje
+      </button>
+ 
+      <p id="exito-form" class="exito-form" style="display:none;">
+        ✅ ¡Mensaje enviado! Gracias por escribirnos.
+      </p>
+ 
+    </form>
+ 
+  </section>
+ 
+ 
  
   <footer id="pie">
     <p>2025 Mundo Fútbol - Proyecto DAW 1 </p>
   </footer>
-
-
-
+ 
+ 
+ 
   <script src="js/script.js"></script>
-
+ 
 </body>
 </html>
