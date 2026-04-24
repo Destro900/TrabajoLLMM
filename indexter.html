@@ -4,7 +4,6 @@
 <head>
  
   <meta charset="UTF-8" />
- 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
  
@@ -12,7 +11,6 @@
   <title>Mundo Fútbol</title>
  
   <!-- Enlace a la hoja de estilos externa. -->
-   
   <link rel="stylesheet" href="css/style.css" />
 </head>
  
@@ -118,8 +116,6 @@
  
     <div class="grid-jugadores" id="grid-jugadores">
  
-      <!--Lionel Messi
-           -->
       <div class="tarjeta-jugador" data-posicion="delantero">
         <h3>Lionel Messi</h3>
         <p class="posicion">Delantero - Argentina</p>
@@ -127,7 +123,6 @@
            Campeon del mundo con Argentina en 2022.</p>
       </div>
  
-      <!-- Cristiano Ronaldo-->
       <div class="tarjeta-jugador" data-posicion="delantero">
         <h3>Cristiano Ronaldo</h3>
         <p class="posicion">Delantero - Portugal</p>
@@ -135,7 +130,6 @@
            Ganador de 5 Balones de Oro.</p>
       </div>
  
-      <!--  Manuel Neuer -->
       <div class="tarjeta-jugador" data-posicion="portero">
         <h3>Manuel Neuer</h3>
         <p class="posicion">Portero - Alemania</p>
@@ -143,7 +137,6 @@
            de libero con guantes.</p>
       </div>
  
-      <!--  Xavi Hernandez -->
       <div class="tarjeta-jugador" data-posicion="centrocampista">
         <h3>Xavi Hernandez</h3>
         <p class="posicion">Centrocampista - España</p>
@@ -152,7 +145,6 @@
       </div>
  
     </div>
- 
  
     <div class="filtros" id="filtros-jugadores">
       <button class="btn-filtro activo" data-filtro="todos">Todos</button>
@@ -164,19 +156,15 @@
   </section>
  
  
-  <!-- 
-       Muestra tarjetas con los clubes más importantes de la historia. -->
   <section id="equipos" class="seccion">
  
     <h2 class="titulo-seccion">Equipos míticos</h2>
  
     <div class="grid-equipos" id="grid-equipos">
  
-      <!--  Real Madrid -->
       <div class="tarjeta-equipo" data-pais="españa">
         <h3>Real Madrid</h3>
         <p class="equipo-pais">España</p>
-        <!-- Lista de logros principales del club -->
         <ul class="logros">
           <li>15 Ligas de Campeones (Champions League)</li>
           <li>35 Ligas españolas</li>
@@ -188,7 +176,6 @@
         </p>
       </div>
  
-      <!-- FC Barcelona -->
       <div class="tarjeta-equipo" data-pais="españa">
         <h3>FC Barcelona</h3>
         <p class="equipo-pais">España</p>
@@ -203,7 +190,6 @@
         </p>
       </div>
  
-      <!--Bayern de Munich-->
       <div class="tarjeta-equipo" data-pais="alemania">
         <h3>Bayern de Munich</h3>
         <p class="equipo-pais">Alemania</p>
@@ -218,7 +204,6 @@
         </p>
       </div>
  
-      <!-- AC Milan-->
       <div class="tarjeta-equipo" data-pais="italia">
         <h3>AC Milan</h3>
         <p class="equipo-pais">Italia</p>
@@ -233,7 +218,6 @@
         </p>
       </div>
  
-      <!--Liverpool FC-->
       <div class="tarjeta-equipo" data-pais="inglaterra">
         <h3>Liverpool FC</h3>
         <p class="equipo-pais">Inglaterra</p>
@@ -248,7 +232,6 @@
         </p>
       </div>
  
-      <!-- Ajax de Amsterdam -->
       <div class="tarjeta-equipo" data-pais="países bajos">
         <h3>Ajax de Amsterdam</h3>
         <p class="equipo-pais">Países Bajos</p>
@@ -276,12 +259,17 @@
  
   </section>
  
+  <!-- SECCIÓN DE CONTACTO
+       Vue controla esta sección entera. Los atributos que empiezan
+       por "v-" o "@" son instrucciones especiales de Vue, no son HTML
+       estándar. Vue los lee y los convierte en comportamiento. -->
   <section id="contacto" class="seccion">
  
     <h2 class="titulo-seccion">Contacto</h2>
- 
-    <!-- Formulario de contacto -->
-    <form id="form-contacto" class="formulario" novalidate>
+
+    <!-- @submit="enviar" le dice a Vue que cuando se envíe el formulario
+         ejecute la función "enviar" que hemos definido en script.js -->
+    <form id="form-contacto" class="formulario" novalidate @submit="enviar">
  
       <!-- Nombre del usuario -->
       <div class="campo-form">
@@ -293,7 +281,9 @@
           placeholder="Tu nombre"
           required
         />
-        <span class="error-form" id="error-nombre"></span>
+        <!-- v-text="errNombre" muestra el mensaje de error cuando la variable
+             errNombre tenga texto. Si está vacía, no se muestra nada. -->
+        <span class="error-form" id="error-nombre" v-text="errNombre"></span>
       </div>
  
       <!-- Correo electrónico -->
@@ -306,11 +296,10 @@
           placeholder="tucorreo@ejemplo.com"
           required
         />
-        <!-- Mensaje de error si el email esta mal -->
-        <span class="error-form" id="error-email"></span>
+        <span class="error-form" id="error-email" v-text="errEmail"></span>
       </div>
  
-      <!-- Jugador o equipo favorito  -->
+      <!-- Jugador o equipo favorito -->
       <div class="campo-form">
         <label for="favorito">¿Cuál es tu jugador o equipo favorito?</label>
         <input
@@ -321,7 +310,7 @@
         />
       </div>
  
-      <!--  Mensaje o comentario -->
+      <!-- Mensaje o comentario -->
       <div class="campo-form">
         <label for="mensaje">Mensaje</label>
         <textarea
@@ -331,8 +320,7 @@
           placeholder="Escribe tu comentario o sugerencia..."
           required
         ></textarea>
-
-        <span class="error-form" id="error-mensaje"></span>
+        <span class="error-form" id="error-mensaje" v-text="errMensaje"></span>
       </div>
  
       <!-- Botón de envío del formulario -->
@@ -340,8 +328,10 @@
         Enviar mensaje
       </button>
  
-      <p id="exito-form" class="exito-form" style="display:none;">
-        ✅ ¡Mensaje enviado! Gracias por escribirnos.
+      <!-- v-if="exito" hace que este párrafo solo aparezca en pantalla
+           cuando la variable "exito" sea true. Si es false, está oculto. -->
+      <p id="exito-form" class="exito-form" v-if="exito">
+        ¡Mensaje enviado! Gracias por escribirnos.
       </p>
  
     </form>
@@ -353,7 +343,6 @@
   <footer id="pie">
     <p>2025 Mundo Fútbol - Proyecto DAW 1 </p>
   </footer>
- 
  
  
   <script src="js/script.js"></script>
