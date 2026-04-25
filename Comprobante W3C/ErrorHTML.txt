@@ -1,0 +1,1 @@
+Al verificar el HTML da error debido a que se usa vue (js) y el validador no lo reconoce
