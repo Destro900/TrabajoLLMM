@@ -1,4 +1,4 @@
-/* variables */
+/* variables (en caso de querer cambiar el color verde primario por cualquier otro, solo haría falta cambiarlo aquí ya que el resto de estilos usan esta variable) */
 :root {
   --primary-color: #1a5f2a;
   --secondary-color: #c4a35a;  
@@ -6,16 +6,17 @@
   --light-bg: #f8f9fa;
   --text-color: #333;
   --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --transition: all 0.3s ease; /* pequeña animación la cual será usada para cuando pongamos el ratón encima */
 }
 
-/* general */
+/* estilos para toda la página */
+/* resetea los estilos por defecto del navegador */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+/* misma fuente, color, espaciado y color de fondo para toda la página */
 body {
   font-family: sans-serif;
   line-height: 1.6;
@@ -24,6 +25,7 @@ body {
 }
 
 /* cabecera */
+/* con esto la cabecera siempre estará pegada arriba de la página y por encima de todos los elementos (z-index)*/ 
 #cabecera {
   background: var(--primary-color);
   padding: 1rem 0;
@@ -33,6 +35,7 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* hace que la cabecera se vea bien, poniendo el nombre de la pagina a la izquierda y la navegación a la derecha*/
 #cabecera nav {
   display: flex;
   justify-content: space-between;
@@ -42,6 +45,7 @@ body {
   padding: 0 1rem;
 }
 
+/* hace que el nombre de la pagina esté en blanco, en negrita y haya un poco de espacio entre letras */
 #cabecera .logo {
   font-size: 1.5rem;
   font-weight: 700;
@@ -49,6 +53,7 @@ body {
   letter-spacing: 1px;
 }
 
+/* pone la navegación en una fila con algo de espacio entre cada opcion y elimina los puntos creados por <li>*/
 #cabecera .menu {
   display: flex;
   list-style: none;
@@ -57,6 +62,7 @@ body {
   padding: 0;
 }
 
+/* estilos para la navegación, poniendo cada opcion en blanco y dandole una pequeña transición */
 #cabecera .menu li a {
   color: #fff;
   text-decoration: none;
@@ -66,14 +72,16 @@ body {
   transition: var(--transition);
 }
 
+/* al poner el ratón por encima de una opcion, se pone un fondo blanco medio transparente y cambia las letras a dorado*/
 #cabecera .menu li a:hover {
   background-color: rgba(255, 255, 255, 0.15);
   color: var(--secondary-color);
 }
 
 /* portada */
+/* la portada tendrá de tamaño el 80% de la pantalla, añade un degradado a la foto y centra el texto para que se vea bien */
 .seccion-portada {
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../imagenes/fondoCabecera.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../imagenes/fondoCabecera.png'); /* si el tamaño de la pantalla es reducido, en vez de quedar ancho y feo pone la misma foto varias veces hasta rellenar el espacio*/
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -83,6 +91,7 @@ body {
   padding: 2rem;
 }
 
+/* aumenta el tamaño del titulo, lo pone en negrita y añade una sombra para que se vea mejor*/ 
 .seccion-portada .portada-contenido h1 {
   font-size: 3.5rem;
   font-weight: 800;
@@ -90,6 +99,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* aumenta un poco el tamaño del subtitulo y lo hace un poco transparente */ 
 .seccion-portada .subtitulo {
   font-size: 1.3rem;
   margin-bottom: 2rem;
@@ -97,6 +107,7 @@ body {
 }
 
 /* botones */
+/* hace que el botón de explorar tenga de fondo un ovalo de color dorado */
 .btn-principal {
   display: inline-block;
   padding: 1rem 2.5rem;
@@ -110,12 +121,14 @@ body {
   cursor: pointer;
 }
 
+/* aplica una animación al botón */
 .btn-principal:hover {
   background-color: #d4b36a;
-  transform: translateY(-3px); /* Al pasar el ratón por encima del botón, el botón hace una animación de elevarse*/
+  transform: translateY(-3px); /* al pasar el ratón por encima del botón, el botón hace una animación de elevarse*/
   box-shadow: 0 5px 20px rgba(196, 163, 90, 0.4);
 }
 
+/* como el botón principal, pero con algunos cambios (se aplica en el botón de curiosidades) */
 .btn-secundario {
   padding: 0.75rem 1.5rem;
   background-color: var(--primary-color);
@@ -133,12 +146,14 @@ body {
 }
 
 /* secciones */
+/* limita el ancho del contenido, lo centra y deja espacios en todos los lados */ 
 .seccion {
   padding: 4rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* centra el titulo de cada sección, lo hace grande, verde y deja espacio abajo */
 .titulo-seccion {
   text-align: center;
   font-size: 2.5rem;
@@ -148,12 +163,14 @@ body {
 }
 
 /* tarjeta sobre el futbol */
+/* crea una cuadricula la cual se adapta al espacio diponible, poniendo un numero de columnas dependiendo del ancho de la pantalla */
 .seccion > .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* permite posicionar las columnas dependiendo del espacio disponible del dispositivo */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
+/* pone un fondo blanco a las tarjetas, hace que las esquinas estén redondeadas y le da sombra */
 .tarjeta {
   background: #fff;
   border-radius: 15px;
@@ -162,36 +179,43 @@ body {
   transition: var(--transition);
 }
 
+/* pequeña animación para cuando se pase el ratón por encima de la tarjeta */
 .tarjeta:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* pone los titulos de las tarjetas en verde y deja un espacio debajo */
 .tarjeta h3 {
   color: var(--primary-color);
   margin-bottom: 1rem;
   font-size: 1.5rem;
 }
 
+/* espacio entre el icono y el texto */
 .tarjeta h3 i {
   margin-right: 0.5rem;
 }
 
+/* espacio a la izquierda */
 .tarjeta ul {
   padding-left: 1.5rem;
 }
 
+/* espacio abajo */
 .tarjeta ul li {
   margin-bottom: 0.5rem;
 }
 
 /* tarjeta sobre el futbol */
+/* limita el ancho, centra las tarjetas y pone el texto a la izquierda */
 .tarjeta {
   max-width: 800px;
   margin: 0 auto;
   text-align: left;
 }
 
+/* separa el los 3 apartados con una linea dorada con poca opacidad */
 .tarjeta hr {
   border: none;
   border-top: 2px dashed var(--secondary-color);
@@ -200,11 +224,13 @@ body {
 }
 
 /* curiosidades */
+/* centra el texto */
 #curiosidades {
   text-align: center;
 }
 
-#curiosidad-predeterminada,
+/* pone el fondo de las curiosidad en verde, redondea las esquinas, añade una linea dorada a la izquierda y pone el texto en cursiva*/
+#curiosidad-predeterminada, 
 #curiosidad-aleatoria {
   padding: 1rem;
   margin: 1rem 0;
@@ -214,12 +240,14 @@ body {
   font-style: italic;
 }
 
+/* hasta que la persona no presione el botón de la curiosidad, no se muestra ninguna otra */
 #curiosidad-aleatoria {
   display: none;
   font-weight: 500;
 }
 
 /* jugadores */
+/* crea una cuadrícula para las tarjetas de los jugadores, hace lo mismo que la cuadrícula anterior */
 .grid-jugadores {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -227,6 +255,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* da un fondo blanco, redondea las esquinas y añade una linea dorada en la parte de arriba */
 .tarjeta-jugador {
   background: #fff;
   border-radius: 15px;
@@ -237,16 +266,19 @@ body {
   border-top: 4px solid var(--secondary-color);
 }
 
+/* hace una animación */
 .tarjeta-jugador:hover {
   transform: translateY(-5px);
   border-top-color: var(--primary-color);
 }
 
+/* pone el titulo en verde y da un pequeño espacio abajo */
 .tarjeta-jugador h3 {
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
+/* pone el texto en dorado, ajusta su tamaño y da un pequeño espacio abajo*/
 .tarjeta-jugador .posicion {
   color: var(--secondary-color);
   font-weight: 600;
@@ -255,6 +287,7 @@ body {
 }
 
 /* filtros */
+/* como el botón de explorar, pero más largo, fondo de color verde y tiene varios botones dentro*/
 .filtros {
   display: flex;
   justify-content: center;
@@ -266,6 +299,7 @@ body {
   border-radius: 50px;
 }
 
+/* fondo transparente, borde blanco medio transparente y texto blanco para los botones*/
 .btn-filtro {
   padding: 0.5rem 1.25rem;
   background-color: transparent;
@@ -278,11 +312,13 @@ body {
   transition: var(--transition);
 }
 
+/* el fondo y el borde cambia al pasar el ratón por encima */
 .btn-filtro:hover {
   background-color: rgba(255, 255, 255, 0.15);
   border-color: #fff;
 }
 
+/* marca el filtro elegido con un borde y fondo dorado y oscurece el texto */
 .btn-filtro.activo {
   background-color: var(--secondary-color);
   border-color: var(--secondary-color);
@@ -290,6 +326,7 @@ body {
 }
 
 /* equipos */
+/* crea otra cuadrícula pero esta vez para los qeuipos */
 .grid-equipos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
@@ -298,7 +335,7 @@ body {
 }
 
 /* logos de cada club */
-
+/* pone el logo del club en el fondo de cada tarjeta */
 .equipo-real-madrid .equipo-fondo {
   background-image: url('../imagenes/logoRealMadrid.png');
 }
@@ -324,6 +361,7 @@ body {
 }
 
 /* tarjetas equipos */
+/* la foto del logo ocupa todo el fondo de la tarjeta */
 .tarjeta-equipo .equipo-fondo {
   position: absolute;
   top: 0;
@@ -337,6 +375,7 @@ body {
   transition: var(--transition);
 }
 
+/* mismo estilo que las tarjetas de los jugadores pero añadiendo la posicion y el overflow para que no haya problema con el fondo */
 .tarjeta-equipo {
   background: #fff;
   border-radius: 15px;
@@ -349,28 +388,33 @@ body {
   overflow: hidden;
 }
 
+/* animacion al pasar por encima el ratón */
 .tarjeta-equipo:hover {
   transform: translateY(-5px);
   border-top-color: var(--primary-color);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* hace más visible el logo del fondo y hace una animación */
 .tarjeta-equipo:hover .equipo-fondo {
   opacity: 0.18;
   transform: scale(1.05);
 }
 
+/* evita que el logo llegue a estar por encima de la tarjeta */
 .equipo-overlay {
   position: relative;
   z-index: 1;
 }
 
+/* pone en verde el nombre del equipo y añade un espacio abajo */
 .tarjeta-equipo h3 {
   color: var(--primary-color);
   margin-bottom: 0.25rem;
   font-size: 1.3rem;
 }
 
+/* pone en dorado el pais del equipo y añade un espacio abajo */
 .tarjeta-equipo .equipo-pais {
   color: var(--secondary-color);
   font-weight: 600;
@@ -378,6 +422,7 @@ body {
   font-size: 0.9rem;
 }
 
+/* elimina los puntos creados por <li> y alinea el texto a la izquierda de la tarjeta */
 .tarjeta-equipo .logros {
   list-style: none;
   padding: 0;
@@ -385,6 +430,7 @@ body {
   text-align: left;
 }
 
+/* añade espacio arriba y abajo de cada linea y añade un separador entre cada linea */ 
 .tarjeta-equipo .logros li {
   padding: 0.25rem 0;
   border-bottom: 1px solid #eee;
@@ -392,6 +438,7 @@ body {
   color: var(--text-color);
 }
 
+/* pone el color de cada linea en negro y ajusta su tamaño y espacio entre lineas */
 .tarjeta-equipo .equipo-desc {
   font-size: 0.85rem;
   color: var(--text-color);
@@ -400,6 +447,7 @@ body {
 }
 
 /* formulario */
+/* centra el formulario, limita su ancho, pone un fondo blanco, redondea las esquinas y le da una pequeña sombra */
 .formulario {
   max-width: 600px;
   margin: 0 auto;
@@ -409,10 +457,12 @@ body {
   box-shadow: var(--card-shadow);
 }
 
+/* espacio entre campos del formulario */
 .campo-form {
   margin-bottom: 1.5rem;
 }
 
+/* permite que el texto y el cuadro estén en 2 lineas*/
 .campo-form label {
   display: block;
   margin-bottom: 0.5rem;
@@ -420,6 +470,7 @@ body {
   color: var(--primary-color);
 }
 
+/* cada campo ocupa el ancho del formulario, le añade un borde gris y redondea sus esquinas */
 .campo-form input,
 .campo-form textarea {
   width: 100%;
@@ -430,6 +481,7 @@ body {
   transition: var(--transition);
 }
 
+/* al seleccionar un campo, el borde se pone de un verde muy claro y añade un borde verde */
 .campo-form input:focus,
 .campo-form textarea:focus {
   outline: none;
@@ -437,6 +489,7 @@ body {
   box-shadow: 0 0 0 3px rgba(26, 95, 42, 0.1);
 }
 
+/* el mensaje de error se muestra en rojo y debajo del campo */
 .error-form {
   color: #dc3545;
   font-size: 0.875rem;
@@ -444,6 +497,7 @@ body {
   margin-top: 0.25rem;
 }
 
+/* mensaje en verde confirmando que todo está bien puesto */
 .exito-form {
   background-color: #d4edda;
   color: #155724;
@@ -455,6 +509,7 @@ body {
 }
 
 /* footer */
+/* cambia el color del footer a negro, centra el texto, lo pone en blanco y pone un espacio arriba para poder separarlo del contenido */
 #pie {
   background-color: var(--dark-bg);
   color: #fff;
@@ -463,6 +518,7 @@ body {
   margin-top: 3rem;
 }
 
+/* hace un poco transparente el texto del footer */
 #pie p {
   margin: 0;
   opacity: 0.8;
