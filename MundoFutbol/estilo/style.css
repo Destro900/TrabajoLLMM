@@ -300,27 +300,27 @@ body {
 /* logos de cada club */
 
 .equipo-real-madrid .equipo-fondo {
-  background-image: url('./imagenes/logoRealMadrid.png');
+  background-image: url('../imagenes/logoRealMadrid.png');
 }
 
 .equipo-barcelona .equipo-fondo {
-  background-image: url('./imagenes/logoBarcelona.png');
+  background-image: url('../imagenes/logoBarcelona.png');
 }
 
 .equipo-bayern .equipo-fondo {
-    background-image: url('./imagenes/logoBayern.png');
+    background-image: url('../imagenes/logoBayern.png');
 }
 
 .equipo-milan .equipo-fondo {
-    background-image: url('./imagenes/logoACMilan.png');
+    background-image: url('../imagenes/logoACMilan.png');
 }
 
 .equipo-liverpool .equipo-fondo {
-    background-image: url('./imagenes/logoLiverpool.png');
+    background-image: url('../imagenes/logoLiverpool.png');
 }
 
 .equipo-ajax .equipo-fondo {
-  background-image: url('./imagenes/logoAjax.png');
+  background-image: url('../imagenes/logoAjax.png');
 }
 
 /* tarjetas equipos */
