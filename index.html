@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+ 
+  <meta charset="UTF-8">
+ 
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <!-- Título -->
+  <title>Mundo Fútbol</title>
+ 
+  <!-- Cargamos Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Enlace a la hoja de estilos externa. -->
+   
+  <link rel="stylesheet" href="../estilo/style.css">
+
+  <!-- Cargamos Vue y el script-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="../script/script.js" defer></script>
+</head>
+ 
+<body>
+ 
+ 
+  <header id="cabecera">
+    <nav>
+ 
+      <!-- Nombre del sitio -->
+      <div class="logo">
+        MUNDO FÚTBOL
+      </div>
+ 
+      <!-- Lista de enlaces de navegación interna. -->
+      <ul class="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre">Sobre el fútbol</a></li>
+        <li><a href="#jugadores">Jugadores</a></li>
+        <li><a href="#equipos">Equipos míticos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+ 
+    </nav>
+  </header>
+ 
+ 
+ 
+  <section id="inicio" class="seccion-portada">
+ 
+    <div class="portada-contenido">
+ 
+      <!-- Titulo principal -->
+      <h1>Bienvenido al mundo del fútbol</h1>
+ 
+      <!-- Subtítulo  de la web -->
+      <p class="subtitulo">
+        Historia, reglas, jugadores legendarios y los equipos más míticos del planeta
+      </p>
+ 
+      <!-- Botón de llamada a la acción. -->
+      <a href="#sobre" class="btn-principal" id="btn-explorar">Explorar</a>
+ 
+    </div>
+ 
+  </section>
+ 
+ 
+ 
+  <section id="sobre" class="seccion">
+
+    <h2 class="titulo-seccion">Sobre el fútbol</h2>
+
+    <!-- Card unificada con historia, reglas y curiosidades -->
+    <article class="tarjeta" id="sobre-futbol">
+      <h3><i class="bi bi-info-circle"></i> Historia</h3>
+      <p>
+        El fútbol moderno nació en Inglaterra en 1863, cuando la
+        <strong>Football Association</strong> estableció las primeras
+        reglas oficiales. Desde entonces se convirtió en el deporte
+        más popular del mundo, con más de 4.000 millones de aficionados.
+      </p>
+
+      <hr class="my-4">
+
+      <h3><i class="bi bi-list-check"></i> Reglas básicas</h3>
+      <ul class="lista-reglas">
+        <li>Cada equipo cuenta con <strong>11 jugadores</strong> en el campo.</li>
+        <li>El partido dura <strong>90 minutos</strong> divididos en dos tiempos.</li>
+        <li>Solo el portero puede tocar el balón con las manos (dentro del área).</li>
+        <li>Se marca gol cuando el balón cruza completamente la línea de portería.</li>
+        <li>La tarjeta roja supone la expulsión inmediata del jugador.</li>
+      </ul>
+
+      <hr class="my-4">
+
+      <h3><i class="bi bi-lightbulb"></i> Curiosidades</h3>
+      <div id="curiosidad-predeterminada">
+        El partido de fútbol con más espectadores en la historia fue la
+        final del Mundial de 1950 entre Brasil y Uruguay, con más de
+        <strong>200.000 personas</strong> en el estadio Maracaná.
+      </div>
+
+      <div id="curiosidad-aleatoria" class="curiosidad-js"></div>
+
+      <button id="btn-curiosidad" class="btn-secundario mt-3">
+        <i class="bi bi-dice-5"></i> Ver otra curiosidad
+      </button>
+
+    </article>
+
+  </section>
+ 
+ 
+  <!-- JUGADORES LEGENDARIOS
+       Muestra tarjetas con los jugadores más destacados de la historia.-->
+  <section id="jugadores" class="seccion">
+ 
+    <h2 class="titulo-seccion">Jugadores legendarios</h2>
+ 
+    <div class="grid-jugadores" id="grid-jugadores">
+ 
+      <!--Lionel Messi-->
+      <div class="tarjeta-jugador" data-posicion="delantero">
+        <h3>Lionel Messi</h3>
+        <p class="posicion">Delantero - Argentina</p>
+        <p>Considerado uno de los mejores jugadores de la historia.
+           Campeón del mundo con Argentina en 2022.</p>
+      </div>
+ 
+      <!-- Cristiano Ronaldo-->
+      <div class="tarjeta-jugador" data-posicion="delantero">
+        <h3>Cristiano Ronaldo</h3>
+        <p class="posicion">Delantero - Portugal</p>
+        <p>Máximo goleador histórico en selecciones nacionales.
+           Ganador de 5 Balones de Oro.</p>
+      </div>
+ 
+      <!-- Manuel Neuer -->
+      <div class="tarjeta-jugador" data-posicion="portero">
+        <h3>Manuel Neuer</h3>
+        <p class="posicion">Portero - Alemania</p>
+        <p>Revolucionó el juego del portero moderno con su estilo
+           de líbero con guantes.</p>
+      </div>
+ 
+      <!-- Xavi Hernandez -->
+      <div class="tarjeta-jugador" data-posicion="centrocampista">
+        <h3>Xavi Hernández</h3>
+        <p class="posicion">Centrocampista - España</p>
+        <p>Símbolo del tiki-taka español. Campeón del mundo en 2010
+           y de Europa en 2008 y 2012.</p>
+      </div>
+
+      <!-- Paolo Maldini -->
+      <div class="tarjeta-jugador" data-posicion="defensa">
+        <h3>Paolo Maldini</h3>
+        <p class="posicion">Defensa - Italia</p>
+        <p>Leyenda del AC Milan. Jugó 902 partidos oficiales,
+           récord absoluto en el club.</p>
+      </div>
+
+      <!-- Franz Beckenbauer -->
+      <div class="tarjeta-jugador" data-posicion="defensa">
+        <h3>Franz Beckenbauer</h3>
+        <p class="posicion">Defensa - Alemania</p>
+        <p>El Kaiser. Revolucionó el rol de líbero y ganó
+           la Copa del Mundo de 1974 como jugador y 1990 como seleccionador.</p>
+      </div>
+
+      <!-- Sergio Ramos -->
+      <div class="tarjeta-jugador" data-posicion="defensa">
+        <h3>Sergio Ramos</h3>
+        <p class="posicion">Defensa - España</p>
+        <p>Uno de los defensas más ganadores de la historia.
+           4 Champions League con el Real Madrid.</p>
+      </div>
+
+      <!-- Luka Modric -->
+      <div class="tarjeta-jugador" data-posicion="centrocampista">
+        <h3>Luka Modric</h3>
+        <p class="posicion">Centrocampista - Croacia</p>
+        <p>Balón de Oro 2018. El cerebro del Real Madrid
+           en su era más dorada.</p>
+      </div>
+
+      <!-- Thierry Henry -->
+      <div class="tarjeta-jugador" data-posicion="delantero">
+        <h3>Thierry Henry</h3>
+        <p class="posicion">Delantero - Francia</p>
+        <p>Leyenda del Arsenal y segundo máximo goleador histórico
+           de la selección francesa.</p>
+      </div>
+
+    </div>
+ 
+ 
+    <div class="filtros" id="filtros-jugadores">
+      <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+      <button class="btn-filtro" data-filtro="delantero">Delanteros</button>
+      <button class="btn-filtro" data-filtro="centrocampista">Centrocampistas</button>
+      <button class="btn-filtro" data-filtro="defensa">Defensas</button>
+      <button class="btn-filtro" data-filtro="portero">Porteros</button>
+    </div>
+ 
+  </section>
+ 
+ 
+  <!-- EQUIPOS MÍTICOS
+       Muestra tarjetas con los clubes más importantes de la historia. -->
+  <section id="equipos" class="seccion">
+ 
+    <h2 class="titulo-seccion">Equipos míticos</h2>
+ 
+    <div class="grid-equipos" id="grid-equipos">
+
+      <!-- Real Madrid -->
+      <div class="tarjeta-equipo equipo-real-madrid" data-pais="españa">
+        <div class="equipo-fondo"></div>
+        <div class="equipo-overlay">
+          <h3>Real Madrid</h3>
+          <p class="equipo-pais">España</p>
+          <ul class="logros">
+            <li>15 Ligas de Campeones (Champions League)</li>
+            <li>35 Ligas españolas</li>
+            <li>8 Mundiales de Clubes</li>
+          </ul>
+          <p class="equipo-desc">
+            El club con más títulos europeos de la historia. Su estadio,
+            el Santiago Bernabéu, es uno de los más icónicos del mundo.
+          </p>
+        </div>
+      </div>
+
+      <!-- FC Barcelona -->
+      <div class="tarjeta-equipo equipo-barcelona" data-pais="españa">
+        <div class="equipo-fondo"></div>
+        <div class="equipo-overlay">
+          <h3>FC Barcelona</h3>
+          <p class="equipo-pais">España</p>
+          <ul class="logros">
+            <li>5 Ligas de Campeones</li>
+            <li>27 Ligas españolas</li>
+            <li>3 Mundiales de Clubes</li>
+          </ul>
+          <p class="equipo-desc">
+            Cuna del tiki-taka y del mejor Messi. El lema
+            <em>Més que un club</em> refleja su carácter cultural y social.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bayern de Múnich -->
+      <div class="tarjeta-equipo equipo-bayern" data-pais="alemania">
+        <div class="equipo-fondo"></div>
+        <div class="equipo-overlay">
+          <h3>Bayern de Múnich</h3>
+          <p class="equipo-pais">Alemania</p>
+          <ul class="logros">
+            <li>6 Ligas de Campeones</li>
+            <li>33 Bundesligas</li>
+            <li>2 Mundiales de Clubes</li>
+          </ul>
+          <p class="equipo-desc">
+            El dominador absoluto del fútbol alemán. En 2020 ganó
+            el sextete completo bajo las órdenes de Hansi Flick.
+          </p>
+        </div>
+      </div>
+
+      <!-- AC Milan -->
+      <div class="tarjeta-equipo equipo-milan" data-pais="italia">
+        <div class="equipo-fondo"></div>
+        <div class="equipo-overlay">
+          <h3>AC Milan</h3>
+          <p class="equipo-pais">Italia</p>
+          <ul class="logros">
+            <li>7 Ligas de Campeones</li>
+            <li>19 Ligas italianas (Serie A)</li>
+            <li>2 Mundiales de Clubes</li>
+          </ul>
+          <p class="equipo-desc">
+            Uno de los clubes más laureados de Europa. En los años 80 y 90
+            fue el equipo más dominante del mundo con Sacchi y Capello.
+          </p>
+        </div>
+      </div>
+
+      <!-- Liverpool FC -->
+      <div class="tarjeta-equipo equipo-liverpool" data-pais="inglaterra">
+        <div class="equipo-fondo"></div>
+        <div class="equipo-overlay">
+          <h3>Liverpool FC</h3>
+          <p class="equipo-pais">Inglaterra</p>
+          <ul class="logros">
+            <li>6 Ligas de Campeones</li>
+            <li>20 Ligas inglesas (Premier League)</li>
+            <li>Remontada mítica ante el AC Milan en Estambul 2005</li>
+          </ul>
+          <p class="equipo-desc">
+            Icono de la cultura futbolística inglesa. El himno
+            <em>You'll Never Walk Alone</em> es el más famoso del fútbol mundial.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ajax de Ámsterdam -->
+      <div class="tarjeta-equipo equipo-ajax" data-pais="países bajos">
+        <div class="equipo-fondo"></div>
+        <div class="equipo-overlay">
+          <h3>Ajax de Ámsterdam</h3>
+          <p class="equipo-pais">Países Bajos</p>
+          <ul class="logros">
+            <li>4 Ligas de Campeones</li>
+            <li>36 Eredivisies</li>
+            <li>Inventores del fútbol total (Johan Cruyff)</li>
+          </ul>
+          <p class="equipo-desc">
+            Revolucionó el fútbol mundial en los años 70 con el concepto
+            del <strong>fútbol total</strong>, influenciando a generaciones enteras.
+          </p>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <div class="filtros" id="filtros-equipos">
+      <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+      <button class="btn-filtro" data-filtro="españa">España</button>
+      <button class="btn-filtro" data-filtro="alemania">Alemania</button>
+      <button class="btn-filtro" data-filtro="italia">Italia</button>
+      <button class="btn-filtro" data-filtro="inglaterra">Inglaterra</button>
+      <button class="btn-filtro" data-filtro="países bajos">Países Bajos</button>
+    </div>
+ 
+  </section>
+ 
+  <section id="contacto" class="seccion">
+ 
+    <h2 class="titulo-seccion">Contacto</h2>
+ 
+    <!-- Formulario de contacto -->
+    <form class="formulario" @submit.prevent="enviar" novalidate>
+ 
+      <!-- Nombre del usuario -->
+      <div class="campo-form">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Tu nombre"
+          v-model="nombre"
+        >
+        <span class="error-form">{{ errNombre }}</span>
+      </div>
+ 
+      <!-- Correo electrónico -->
+      <div class="campo-form">
+        <label for="email">Correo electrónico</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="tucorreo@ejemplo.com"
+          v-model="email"
+        >
+        <!-- Mensaje de error si el email está mal -->
+        <span class="error-form">{{ errEmail }}</span>
+      </div>
+ 
+      <!-- Jugador o equipo favorito -->
+      <div class="campo-form">
+        <label for="favorito">¿Cuál es tu jugador o equipo favorito?</label>
+        <input
+          type="text"
+          id="favorito"
+          name="favorito"
+          placeholder="Ej: Real Madrid, Messi..."
+          v-model="favorito"
+        >
+      </div>
+ 
+      <!-- Mensaje o comentario -->
+      <div class="campo-form">
+        <label for="mensaje">Mensaje</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="5"
+          placeholder="Escribe tu comentario o sugerencia..."
+          v-model="mensaje"
+        ></textarea>
+
+        <span class="error-form">{{ errMensaje }}</span>
+      </div>
+ 
+      <!-- Botón de envío del formulario -->
+      <button type="submit" class="btn-principal" id="btn-enviar">
+        Enviar mensaje
+      </button>
+ 
+      <p v-if="exito" class="exito-form">
+        ¡Mensaje enviado! Gracias por escribirnos.
+      </p>
+ 
+    </form>
+ 
+  </section>
+ 
+ 
+ 
+  <footer id="pie">
+    <p>2026 Mundo Fútbol - Proyecto DAW 1</p>
+  </footer>
+</body>
+</html>
